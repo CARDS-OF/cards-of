@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CARDS-OF/cards-of/schemas/decks-of.v0.schema.json",
+  "title": "decks-of v0",
+  "type": "object",
+  "required": ["schema", "haecceity", "decks"],
+  "properties": {
+    "schema": {
+      "const": "decks-of.v0"
+    },
+    "haecceity": {
+      "type": "string"
+    },
+    "decks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["deck_index", "card_id", "role", "relation"],
+        "properties": {
+          "deck_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "card_id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "deck": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "notes": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
