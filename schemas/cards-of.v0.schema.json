@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CARDS-OF/cards-of/schemas/cards-of.v0.schema.json",
+  "title": "cards-of v0",
+  "type": "object",
+  "required": ["schema", "haecceity", "cards"],
+  "properties": {
+    "schema": {
+      "const": "cards-of.v0"
+    },
+    "haecceity": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["deal_index", "card_id", "entity"],
+        "properties": {
+          "deal_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "card_id": {
+            "type": "string"
+          },
+          "entity": {
+            "type": "string"
+          },
+          "session_id": {
+            "type": "string"
+          },
+          "agent_spawn_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "polarity": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CARDS-OF/cards-of/schemas/agents-of.v0.schema.json",
+  "title": "agents-of v0",
+  "type": "object",
+  "required": ["schema", "haecceity", "agents"],
+  "properties": {
+    "schema": {
+      "const": "agents-of.v0"
+    },
+    "haecceity": {
+      "type": "string"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["spawn_index", "name", "session_id", "class"],
+        "properties": {
+          "spawn_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string"
+          },
+          "session_id": {
+            "type": "string"
+          },
+          "class": {
+            "type": "string"
+          },
+          "card_deal_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "card_id": {
+            "type": "string"
+          },
+          "parent_thread_id": {
+            "type": "string"
+          },
+          "forked_from_id": {
+            "type": "string"
+          },
+          "relations": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

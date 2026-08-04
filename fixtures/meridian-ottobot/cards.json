@@ -1,0 +1,57 @@
+{
+  "schema": "cards-of.v0",
+  "haecceity": "meridian-ottobot",
+  "cards": [
+    {
+      "deal_index": 1,
+      "card_id": "👽J♥️",
+      "entity": "Bernoulli",
+      "session_id": "019f8768-c3c4-7363-973d-9781ac854fb3",
+      "agent_spawn_index": 1,
+      "status": "forked-past-self",
+      "notes": "Card assignment moved from superseded Rancor frame to Han Solo card after fork semantics were clarified.",
+      "provenance": [
+        "human annotation photo 2026-08-04 11.17.43"
+      ]
+    },
+    {
+      "deal_index": 2,
+      "card_id": "🍍K♦️←",
+      "entity": "Nietzsche",
+      "session_id": "019f8911-b8c5-70b2-b4d8-5bef9c38ea66",
+      "agent_spawn_index": 2,
+      "polarity": "pineapple baseline reads upright from east; viewer-up points west",
+      "status": "durable-subagent-pseudo-sidecar",
+      "notes": "Initially misnamed Bernoulli in prompt; later corrected to Nietzsche/Nietsche.",
+      "provenance": [
+        "human annotation photos 2026-08-04 11.30.38, 2026-08-04 11.30.45, 2026-08-04 11.35.45"
+      ]
+    },
+    {
+      "deal_index": 3,
+      "card_id": "🍍Q♦️→",
+      "entity": "Galileo",
+      "session_id": "019f8dc8-2050-7451-a7ac-615139342490",
+      "agent_spawn_index": 4,
+      "polarity": "pineapple baseline reads upright from west; viewer-up points east",
+      "status": "research-scout",
+      "notes": "Dealt before Anscombe's final corrected card, despite Galileo being the fourth spawned child.",
+      "provenance": [
+        "human annotation photos 2026-08-04 12.07.41, 2026-08-04 12.07.46"
+      ]
+    },
+    {
+      "deal_index": 4,
+      "card_id": "👽6♣️",
+      "entity": "Anscombe",
+      "session_id": "019f8db0-a955-7543-b5c6-1f5572088d60",
+      "agent_spawn_index": 3,
+      "status": "subagent-fork-midwife",
+      "notes": "Anscombe is the forked subagent/midwife. Rancor is of Anscombe, not Anscombe.",
+      "provenance": [
+        "human annotation photo 2026-08-04 13.54.09"
+      ]
+    }
+  ]
+}
+
