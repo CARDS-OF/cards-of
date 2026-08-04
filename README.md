@@ -1,10 +1,16 @@
 # CARDS-OF / cards-of
 
 `cards-of` records dealt-card provenance separately from agent/thread birth
-order.
+order. This repository owns schemas and shared namespace conventions, not the
+concrete card data for any one agent.
 
-The first dogfood fixture is `meridian-ottobot`, because it already exercises
-the important distinctions:
+Concrete identity/card repos should live beside this repo, for example:
+
+```text
+CARDS-OF/meridian-ottobot
+```
+
+The conventions are designed to preserve these distinctions:
 
 - physical deal order can differ from later ontology correction;
 - a card can be retconned from one identity to another without changing deal
@@ -39,15 +45,16 @@ children, forks, sidecars, and the physical cards dealt to represent them.
 borrow, or carry as stable persona layers. This avoids mixing spawned-child
 provenance with the cards used by the parent identity itself.
 
-## Current Fixture
+## Concrete Data
 
-The seed data lives at:
+Concrete card data should live in identity-specific repos, not here. For
+example:
 
 ```text
-fixtures/meridian-ottobot/cards.json
-fixtures/meridian-ottobot/agents.json
-fixtures/meridian-ottobot/decks.json
+cards-of/meridian-ottobot/cards.json
+cards-of/meridian-ottobot/agents.json
+cards-of/meridian-ottobot/decks.json
 ```
 
-The data is intentionally metadata-only. Source photos are referenced by
-provenance labels, not committed here.
+This registry repo may contain schemas and documentation examples, but should
+not carry a live agent's own instance records.
