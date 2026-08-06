@@ -43,17 +43,22 @@
           "notes": {
             "type": "string"
           },
-          "provenance": {
-            "type": "array",
-            "items": {
-              "type": "string"
+            "provenance": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "privacy_scribe": {
+              "$ref": "privacy-scribe.v0.schema.json"
             }
-          }
         },
         "additionalProperties": true
       }
+    },
+    "privacy_scribe": {
+      "$ref": "privacy-scribe.v0.schema.json"
     }
   },
   "additionalProperties": false
 }
-

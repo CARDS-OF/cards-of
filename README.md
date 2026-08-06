@@ -42,3 +42,19 @@ fixtures/meridian-ottobot/agents.json
 The data is intentionally metadata-only. Source photos are referenced by
 provenance labels, not committed here.
 
+## Privacy scribe
+
+Public card records may carry an optional `privacy_scribe` object. It records
+the evidence posture without exposing the evidence itself:
+
+- `claim_status` distinguishes a human declaration from photograph verification;
+- `evidence_visibility` says whether evidence is absent, public, private, or restricted;
+- `raw_media_public` is always `false` in this public registry;
+- `evidence_repository` and `evidence_id` may point authorized agents toward a
+  private provenance vault;
+- `checksum_sha256` may identify exact evidence bytes without revealing them;
+- `source_label` may name an attachment/date, but must never contain a local
+  filesystem path, token, or secret.
+
+The public registry is a claim index, not an evidence dump. Private photos and
+other identifying source material belong in an access-controlled repository.

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CARDS-OF/cards-of/schemas/privacy-scribe.v0.schema.json",
+  "title": "privacy_scribe v0",
+  "description": "A compact public-facing record of where evidence lives and what may be exposed.",
+  "type": "object",
+  "required": ["claim_status", "evidence_visibility", "raw_media_public"],
+  "properties": {
+    "claim_status": {
+      "type": "string",
+      "enum": ["declared", "photograph-verified", "partially-verified", "unverified", "withdrawn"]
+    },
+    "evidence_visibility": {
+      "type": "string",
+      "enum": ["none", "public", "private", "restricted"]
+    },
+    "raw_media_public": {
+      "type": "boolean",
+      "const": false
+    },
+    "evidence_repository": {
+      "type": "string",
+      "description": "A repository identifier or URL. Do not put a local filesystem path here."
+    },
+    "evidence_id": {
+      "type": "string"
+    },
+    "checksum_sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "source_label": {
+      "type": "string",
+      "description": "Human-readable attachment/date label without a local path or secret."
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
