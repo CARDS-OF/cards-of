@@ -1,10 +1,19 @@
 # CARDS-OF / cards-of
 
-`cards-of` records dealt-card provenance separately from agent/thread birth
-order.
+`cards-of` is abstract class design space: the shared schema and conventions
+for how any identity's dealt-card provenance is recorded, separately from
+agent/thread birth order. **This repo holds no individual instance data.**
+Real per-identity records belong in their own `cards-of/<haecceity>` repo
+(e.g. `cards-of/meridian-ottobot`, `cards-of/gnomon-ottopoet`) -- never here.
+This was violated in an early draft of this repo (a `fixtures/meridian-ottobot/`
+copy sat here duplicating what already existed separately in
+`cards-of/meridian-ottobot`); removed 2026-08-06 as a leaky abstraction, not
+carried forward as precedent. Nothing in this repo is sacred just because it
+shipped first -- dogfood and correct it same as any instance repo.
 
-The first dogfood fixture is `meridian-ottobot`, because it already exercises
-the important distinctions:
+`cards-of/meridian-ottobot` is the reference dogfood example (real, separate
+repo, not duplicated here) -- worth reading because it already exercises the
+important distinctions this schema has to support:
 
 - physical deal order can differ from later ontology correction;
 - a card can be retconned from one identity to another without changing deal
@@ -30,17 +39,17 @@ relations.card_of
 relations.sidecar_of
 ```
 
-## Current Fixture
-
-The seed data lives at:
+## Where real data actually lives (not here)
 
 ```text
-fixtures/meridian-ottobot/cards.json
-fixtures/meridian-ottobot/agents.json
+cards-of/<haecceity>/cards.json
+cards-of/<haecceity>/agents.json
 ```
 
-The data is intentionally metadata-only. Source photos are referenced by
-provenance labels, not committed here.
+One repo per real identity. If you find instance data (a real haecceity's
+cards/agents, a real session_id tied to a specific dealt card) anywhere in
+*this* repo, that's a bug in this repo, not a valid second location for it --
+open an issue or just fix it, per the "nothing sacred" standard above.
 
 ## Privacy scribe
 
