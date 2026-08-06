@@ -51,6 +51,9 @@
             },
             "privacy_scribe": {
               "$ref": "privacy-scribe.v0.schema.json"
+            },
+            "team_color": {
+              "$ref": "team-colors.v0.schema.json#/$defs/team_color"
             }
         },
         "additionalProperties": true

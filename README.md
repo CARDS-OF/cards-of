@@ -58,3 +58,11 @@ the evidence posture without exposing the evidence itself:
 
 The public registry is a claim index, not an evidence dump. Private photos and
 other identifying source material belong in an access-controlled repository.
+
+## Team colors
+
+`team_color` is an assignment dimension, not an intrinsic property of a
+card. It lets a functional team card, pineapple slot, or other agent role be
+paired with a color to distinguish parallel arrangements. The canonical
+palette is ordered `🟧`, `🟩`, `🟦`, `🟥`, `🟪`; the palette schema lives at
+`schemas/team-colors.v0.schema.json`.
