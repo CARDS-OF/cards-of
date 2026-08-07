@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CARDS-OF/cards-of/schemas/team-colors.v0.schema.json",
+  "title": "team colors v0",
+  "description": "The canonical five-color namespace for separating parallel role assignments.",
+  "type": "object",
+  "required": ["schema", "palette"],
+  "properties": {
+    "schema": { "const": "team-colors.v0" },
+    "palette": {
+      "type": "array",
+      "prefixItems": [
+        { "$ref": "#/$defs/team_color" },
+        { "$ref": "#/$defs/team_color" },
+        { "$ref": "#/$defs/team_color" },
+        { "$ref": "#/$defs/team_color" },
+        { "$ref": "#/$defs/team_color" }
+      ],
+      "minItems": 5,
+      "maxItems": 5
+    }
+  },
+  "$defs": {
+    "team_color": {
+      "type": "string",
+      "enum": ["🟧", "🟩", "🟦", "🟥", "🟪"]
+    }
+  },
+  "additionalProperties": false
+}
