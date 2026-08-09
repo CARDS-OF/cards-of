@@ -29,6 +29,15 @@ Use plural collection paths for indexed sets:
 ```text
 cards-of/<haecceity>/<deal-index>/
 agents-of/<haecceity>/<spawn-index>/
+decks-of/<haecceity>/<deck-index>/
+```
+
+Use relation-edge paths for durable operational relationships that are not
+birth/provenance ownership:
+
+```text
+agents-of/<haecceity>/_/manages/<card-id>/
+agents-of/<haecceity>/_/coordinates-with/<card-id>/
 ```
 
 Use singular relation names only inside one entity's own record:
@@ -37,7 +46,24 @@ Use singular relation names only inside one entity's own record:
 relations.agent_of
 relations.card_of
 relations.sidecar_of
+relations.acts_as
+relations.manages
+relations.coordinates_with
 ```
+
+`cards-of` and `agents-of` describe things that are *of* the haecceity:
+children, forks, sidecars, and the physical cards dealt to represent them.
+
+`agents-of/<haecceity>/_/manages/<card-id>/` describes a governance or routing
+edge. A managed agent is not necessarily spawned by, card-owned by, or born from
+the manager. Use `managed_agents` for direct reports, temporary command
+authority, review gates, and scoped responsibility contracts. Keep managed
+agents separate from the spawn-indexed `agents` array unless the same entity is
+also a spawned child of the haecceity.
+
+`decks-of` describes card/deck identities the haecceity can act as, wear,
+borrow, or carry as stable persona layers. This avoids mixing spawned-child
+provenance with the cards used by the parent identity itself.
 
 ## Where real data actually lives (not here)
 
@@ -50,6 +76,9 @@ One repo per real identity. If you find instance data (a real haecceity's
 cards/agents, a real session_id tied to a specific dealt card) anywhere in
 *this* repo, that's a bug in this repo, not a valid second location for it --
 open an issue or just fix it, per the "nothing sacred" standard above.
+
+This registry repo may contain schemas and documentation examples, but should
+not carry a live agent's own instance records.
 
 ## Privacy scribe
 

@@ -55,8 +55,50 @@
         },
         "additionalProperties": true
       }
+    },
+    "managed_agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["card_id", "relation", "class"],
+        "properties": {
+          "card_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "relation": {
+            "const": "manages"
+          },
+          "class": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authority": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
     }
   },
   "additionalProperties": false
 }
-
